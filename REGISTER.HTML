@@ -1,0 +1,212 @@
+<!DOCTYPE HTML>
+<HTML>
+	<HEAD>
+		<meta charset="UTF-8">
+		<link rel="icon" href="Rickshaw.png">
+		<TITLE>
+			REGISTRATION FORM
+		</TITLE>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="VESPOOLCSS.css">
+		<style >
+		input[type='radio'] {
+    transform: scale(2);
+}
+		input[type=checkbox] {
+    zoom: 2;
+				}
+			input[type=text]:focus {
+    border: 3px solid #555;
+		}			
+		input[type=submit]{
+    background-color:#660066;
+    border: none;
+    color: white;
+    padding: 18px 32px;
+    text-decoration: none;
+    margin: 5px 100px 18px;
+    cursor: pointer;
+    padding-bottom: 18px;
+
+}
+		</style>
+	</HEAD>
+	
+	<body class = "pga-background">
+
+		<script type="text/javascript">
+		/*<!--<script language="JavaScript";>-->*/
+			function validateForm()
+			{  
+				var name = document.Register.Name.value;  
+				var password = document.Register.password1.value;  
+				var secondpassword = document.Register.password2.value;  
+				var mobile_no = document.Register.mobile_no.value;  
+				var pincode = document.Register.pincode.value;
+				var regexname = /^[a-zA-Z]*$/;
+							
+				if (regexname.test(name) == false) 
+				{
+					alert("Enter valid name");
+					return false;
+				}
+				
+				if(mobile_no.length != 10)
+				{
+					alert("Enter valid mobile no");
+					
+					return false;
+				}
+				
+				if(password.length < 6)
+				{  
+				  alert("Password must be at least 6 characters long.");  
+				  return false;  
+				}  
+				
+				if(password != secondpassword)
+				{
+					alert("Re-entered Password must be same!");  
+					return false;  
+				}
+				
+				if(pincode.length != 6)
+				{
+					alert("Enter valid pincode");
+					return false;
+				}
+			}  
+		</script>  
+		<p align="center"><font face="MV Boli" color="Black" size="22" text-align= "right">VESPOOL</font></p>
+
+		<ul>
+		  <!--<li><h><a class="active" href="#home">Ride</a></h></li>
+		  <li style="float:right" class ="pga-li pga-li-a pga-ul "><a href="#about">Sign-out</a></li>
+		  <li style="float:right"><a href="#about">Sign-in</a></li>
+		  <li style="float:right"><a href="#about">Register</a></li>-->
+		  <li style="float:right"><a href="VESPOOL.php"><< Go to main Page</a></li>
+		</ul>
+		<!--<h1 class="pga-center">
+			VESPOOL
+		</h1>
+		
+		<H4 class="pga-logo pga-center">
+			VESPOOL
+		</H4>
+			
+		<DIV style="float:right;">
+			<button class="pga-dropbtn" >
+				<a href = "logout.php">
+					Sign Out
+				</a>
+			</button>
+		</div>
+	
+		<DIV style="float:right;">
+			<button class="pga-dropbtn" >
+				<a href = "SIGN UP.html">
+					Sign in
+				</a>
+			</button>
+		</div>
+		-->
+		<BR>
+		<DIV>
+			<IMG SRC = 'vespool/mobile.png' ALT = 'mobile' height = '900' width = '500' class = 'pga-imgContainerLeft' align="left">
+			<IMG SRC = 'vespool/three.png' ALT = 'three' height = '500' width = '500' class = 'pga-imgContainerRight' align="right">
+		</DIV>
+		<DIV style = "margin: 0px 30%">
+			<p style="text-align:center;" align = "center">	
+				<H1><U>
+					REGISTRATION FORM
+				</U></H1>
+				<FORM name = "Register" method = "post" onsubmit = "return validateForm()" action = "Register.php" class = "pga-style2" >
+					<BR><B><U>Personal Details</U></B><BR>
+					<b>Name:</b>
+						<input type="text" name="Name" required>
+						<br>
+						
+									
+					<b>Mobile No:</b>
+						<input type="number" name="mobile_no" required>
+						<br>
+						
+						
+					<b>Email id:</b>
+						<input type="email" name="email_id" required>
+						<br>
+					
+					<b>Gender:</b>
+						<input type="radio" name="gender" value="Male" checked="checked"> Male
+						<input type="radio" name="gender" value="Female"> Female
+						<input type="radio" name="gender" value="Other"> Other  
+						<br>
+						
+					<b>Date of Birth:</b>
+						<input type="date" name="date_of_birth" min="1900-01-01" required>
+						<br>
+						
+					
+					<BR><BR><B><U>Residential Address:</U></B><BR>
+					
+					<b>City:</b>
+						<select name="city">
+							<option value="Mumbai" selected>Mumbai</option>
+							<option value="Delhi">Delhi</option>
+							<option value="Chennai" >Chennai</option>
+							<option value="Kolkata">Calcutta</option>
+						</select>
+						<br>
+						
+						
+					<b>State:</b>
+						<select name="state">
+							<option value="Maharashtra" selected>Maharashtra</option>
+							<option value="Delhi">Delhi</option>
+							<option value="TamilNadu">Tamil Nadu</option>
+							<option value="WestBengal">West Bengal</option>
+						</select>
+						<br>
+						
+					
+					<b>Pincode:</b>
+						<input type="number" name="pincode" required>
+						<br>
+						
+						
+					<b>Study At/Work At:</B>
+						<input type = "text" name = "organization" required>
+						<br>
+						
+					
+					<BR><BR><B><U>Login Details:</U></b><BR>
+					<B>Username:</B>
+						<input type="text" name="username" required>
+						<br>
+					<b>Password:</b>
+						<input type="password" name="password1" required>
+						<br>
+						
+					
+					<b>Re-enter Password:</b>
+						<input type="password" name="password2" required>
+						<br><br><br>
+						
+					<input type="checkbox" name="UNDERTAKING" value="Agreed" required>Do you agree with the terms and the conditions   <A Href = "TC.html">?</a>
+					<br>
+					<br>
+					
+					<input type="submit" value="Submit">
+
+					<BR>
+					<BR>
+					<br>
+				</FORM>	
+			</DIV>
+			<!--<h2><a href = "logout.php">Sign Out</a></h2>--><br>
+		</P>
+
+	</BODY>
+	
+</HTML>
